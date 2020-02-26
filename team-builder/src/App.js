@@ -17,9 +17,9 @@ function App() {
   const addTeamMember = member => {
     const newMem ={
       id: Date.now(),
-      name: team.name,
-      email: team.email,
-      job: team.job
+      name: member.name,
+      email: member.email,
+      job: member.job
     };
     setTeam([...team, newMem]);
   };
