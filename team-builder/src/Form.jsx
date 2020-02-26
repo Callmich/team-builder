@@ -9,13 +9,26 @@ const Form = props => {
     job: ""
   })
 
+  const handleChanges = e => {
+    setPerson({ ...person, [e.target.name]: e.target.value});
+    console.log(person);
+  }
+
+  const submitForm = e => {
+    e.preventDefault();
+    props.addTeamMember(person);
+    setPerson({name: "", job: "", email: ""})
+  }
+
   return (
-    <form>
+    <form onSubmit={submitForm}>
       <label htmlFor="name">Name  </label>
       <input
         id="name"
         type="text"
         name="name"
+        onChange={handleChanges}
+        value={person.name}
       />
       <br/>
       <label htmlFor="job">Job   </label>
@@ -23,6 +36,8 @@ const Form = props => {
         id="job"
         type="text"
         name="job"
+        onChange={handleChanges}
+        value={person.job}
       />
       <br/>
       <label htmlFor="email">Email </label>
@@ -30,9 +45,11 @@ const Form = props => {
         id="email"
         type="text"
         name="email"
+        onChange={handleChanges}
+        value={person.email}
       />
-
-
+      <br/>
+      <button type="submit">Add Member</button>
     </form>
   );
 }
