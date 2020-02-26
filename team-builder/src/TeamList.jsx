@@ -1,10 +1,18 @@
 import React, {useState} from 'react';
 import './App.css';
 
-function TeamList() {
+const TeamList = props => {
   return (
     <div className="App">
-      <h1>Hello World</h1>
+      {props.team.map(t => (
+        <div key={t.id}>
+            <br/>
+            <h2>{t.name}</h2>
+            <h3>{t.job}</h3>
+            <h3>{t.email}</h3>
+            <br/>
+        </div>
+      ))}
 
     </div>
   );

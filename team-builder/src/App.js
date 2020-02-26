@@ -29,7 +29,7 @@ function App() {
     <div className="App">
       <h1>The A Team</h1>
       <Form />
-      <TeamList />
+      <TeamList team={team}/>
 
 
     </div>
