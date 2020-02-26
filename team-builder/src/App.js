@@ -28,7 +28,7 @@ function App() {
   return (
     <div className="App">
       <h1>The A Team</h1>
-      <Form />
+      <Form addTeamMember={addTeamMember}/>
       <TeamList team={team}/>
 
 

@@ -1,12 +1,39 @@
 import React, {useState} from 'react';
 import './App.css';
 
-function Form() {
-  return (
-    <div className="App">
-      <h1>Hello World</h1>
+const Form = props => {
+  console.log("Props!", props)
+  const [person, setPerson] = useState({
+    name: "",
+    email: "",
+    job: ""
+  })
 
-    </div>
+  return (
+    <form>
+      <label htmlFor="name">Name  </label>
+      <input
+        id="name"
+        type="text"
+        name="name"
+      />
+      <br/>
+      <label htmlFor="job">Job   </label>
+      <input
+        id="job"
+        type="text"
+        name="job"
+      />
+      <br/>
+      <label htmlFor="email">Email </label>
+      <input
+        id="email"
+        type="text"
+        name="email"
+      />
+
+
+    </form>
   );
 }
 
