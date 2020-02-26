@@ -1,10 +1,36 @@
-import React from 'react';
+import React, {useState} from 'react';
+
+import TeamList from "./TeamList"
+import Form from "./Form";
 import './App.css';
 
 function App() {
+
+  const [team, setTeam] = useState([
+    {
+      id: 1,
+      name: "Callahan",
+      email: "123@FakeSt.com",
+      job: "Smart Guy"
+    }
+  ]);
+  const addTeamMember = member => {
+    const newMem ={
+      id: Date.now(),
+      name: team.name,
+      email: team.email,
+      job: team.job
+    };
+    setTeam([...team, newMem]);
+  };
+
+
   return (
     <div className="App">
-      <h1>Hello World</h1>
+      <h1>The A Team</h1>
+      <Form />
+      <TeamList />
+
 
     </div>
   );
